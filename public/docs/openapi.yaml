@@ -1,0 +1,645 @@
+openapi: 3.0.3
+info:
+  title: 'Todo Apps'
+  description: '설명 부분 입니다. 현재 버전은 v1입니다.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://todoapp.test'
+paths:
+  /api/v1/todos:
+    get:
+      summary: '포스트 리스트 가져오기'
+      operationId: ''
+      description: ''
+      parameters:
+        -
+          in: query
+          name: page
+          description: 페이지
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 페이지
+            example: 1
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        200:
+          description: 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 52
+                      title: '안녕하세요? - 예시입니다'
+                      content: 하하하하
+                      deadline: '2021-12-12'
+                      isDone: 52
+                      updated_at: '4 hours ago 전에 수정되었습니다.'
+                    -
+                      id: 51
+                      title: '안녕하세요?'
+                      content: 하하하
+                      deadline: '마감기한이 정해져 있지 않습니다.'
+                      isDone: 51
+                      updated_at: '4 hours ago 전에 수정되었습니다.'
+                    -
+                      id: 2
+                      title: Reprehenderit.
+                      content: 'Quisquam ipsa dignissimos qui ea ut quis maiores. Sit velit deleniti at est.'
+                      deadline: '마감기한이 정해져 있지 않습니다.'
+                      isDone: 2
+                      updated_at: '4 hours ago 전에 수정되었습니다.'
+                    -
+                      id: 3
+                      title: Eum.
+                      content: 'Cum blanditiis voluptas est molestiae ex. Maiores est omnis labore nam atque.'
+                      deadline: '마감기한이 정해져 있지 않습니다.'
+                      isDone: 3
+                      updated_at: '4 hours ago 전에 수정되었습니다.'
+                    -
+                      id: 4
+                      title: 'Iste quae.'
+                      content: 'Aut voluptatibus voluptates cum nulla. Eos id et reiciendis numquam placeat.'
+                      deadline: '마감기한이 정해져 있지 않습니다.'
+                      isDone: 4
+                      updated_at: '4 hours ago 전에 수정되었습니다.'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 11
+                    path: 'http://127.0.0.1:8000/api/v1/todos'
+                    per_page: 5
+                    to: 5
+                    total: 51
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 52
+                        title: '안녕하세요? - 예시입니다'
+                        content: 하하하하
+                        deadline: '2021-12-12'
+                        isDone: 52
+                        updated_at: '4 hours ago 전에 수정되었습니다.'
+                      -
+                        id: 51
+                        title: '안녕하세요?'
+                        content: 하하하
+                        deadline: '마감기한이 정해져 있지 않습니다.'
+                        isDone: 51
+                        updated_at: '4 hours ago 전에 수정되었습니다.'
+                      -
+                        id: 2
+                        title: Reprehenderit.
+                        content: 'Quisquam ipsa dignissimos qui ea ut quis maiores. Sit velit deleniti at est.'
+                        deadline: '마감기한이 정해져 있지 않습니다.'
+                        isDone: 2
+                        updated_at: '4 hours ago 전에 수정되었습니다.'
+                      -
+                        id: 3
+                        title: Eum.
+                        content: 'Cum blanditiis voluptas est molestiae ex. Maiores est omnis labore nam atque.'
+                        deadline: '마감기한이 정해져 있지 않습니다.'
+                        isDone: 3
+                        updated_at: '4 hours ago 전에 수정되었습니다.'
+                      -
+                        id: 4
+                        title: 'Iste quae.'
+                        content: 'Aut voluptatibus voluptates cum nulla. Eos id et reiciendis numquam placeat.'
+                        deadline: '마감기한이 정해져 있지 않습니다.'
+                        isDone: 4
+                        updated_at: '4 hours ago 전에 수정되었습니다.'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 52
+                        title:
+                          type: string
+                          example: '안녕하세요? - 예시입니다'
+                        content:
+                          type: string
+                          example: 하하하하
+                        deadline:
+                          type: string
+                          example: '2021-12-12'
+                        isDone:
+                          type: integer
+                          example: 52
+                        updated_at:
+                          type: string
+                          example: '4 hours ago 전에 수정되었습니다.'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 11
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/todos'
+                      per_page:
+                        type: integer
+                        example: 5
+                      to:
+                        type: integer
+                        example: 5
+                      total:
+                        type: integer
+                        example: 51
+      tags:
+        - 'Todo 포스트 관리'
+      security: []
+    post:
+      summary: '포스트 추가하기'
+      operationId: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        201:
+          description: '마감기한이 정해져 있지 않을 때'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 50
+                    title: '빨래하기. - 예시'
+                    content: '빨래돌릴때 수건 먼저 돌리기 - 예시'
+                    deadline: '마감기한이 정해져있지 않습니다.'
+                    isDone: 완료
+                    create_at: '15 hours ago 전에 작성되었다.'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 50
+                      title:
+                        type: string
+                        example: '빨래하기. - 예시'
+                      content:
+                        type: string
+                        example: '빨래돌릴때 수건 먼저 돌리기 - 예시'
+                      deadline:
+                        type: string
+                        example: '마감기한이 정해져있지 않습니다.'
+                      isDone:
+                        type: string
+                        example: 완료
+                      create_at:
+                        type: string
+                        example: '15 hours ago 전에 작성되었다.'
+        422:
+          description: '데이터가 유효하지 않을 때'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The given data was invalid.'
+                  errors:
+                    deadline:
+                      - 'The deadline is not a valid date.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The given data was invalid.'
+                  errors:
+                    type: object
+                    properties:
+                      deadline:
+                        type: array
+                        example:
+                          - 'The deadline is not a valid date.'
+                        items:
+                          type: string
+      tags:
+        - 'Todo 포스트 관리'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: '할일 제목'
+                  example: '책 읽기'
+                content:
+                  type: longText
+                  description: '할일 내용.'
+                  example: '자기개발에 대한 책을 읽자'
+                deadline:
+                  type: date
+                  description: 마감기한
+                  example: null
+                isDone:
+                  type: boolean
+                  description: 완료여부
+                  example: true
+              required:
+                - title
+                - isDone
+      security: []
+  '/api/v1/todos/{id}':
+    get:
+      summary: '특정 할일 가져오기'
+      operationId: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        200:
+          description: '마감기한이 정해져 있지 않을때'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 50
+                    title: '빨래하기. - 예시'
+                    content: '빨래돌릴때 수건 먼저 돌리기 - 예시'
+                    deadline: '마감기한이 정해져있지 않습니다.'
+                    isDone: 완료
+                    create_at: '15 hours ago 전에 작성되었다.'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 50
+                      title:
+                        type: string
+                        example: '빨래하기. - 예시'
+                      content:
+                        type: string
+                        example: '빨래돌릴때 수건 먼저 돌리기 - 예시'
+                      deadline:
+                        type: string
+                        example: '마감기한이 정해져있지 않습니다.'
+                      isDone:
+                        type: string
+                        example: 완료
+                      create_at:
+                        type: string
+                        example: '15 hours ago 전에 작성되었다.'
+        404:
+          description: 'todo not found'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: '해당 할일을 찾을 수가 없습니다.'
+                properties:
+                  message:
+                    type: string
+                    example: '해당 할일을 찾을 수가 없습니다.'
+      tags:
+        - 'Todo 포스트 관리'
+      security: []
+    put:
+      summary: '특정 할일 수정하기'
+      operationId: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 54
+                    title: '새 할일'
+                    content: '저녁 장보기'
+                    deadline: '2021-12-01'
+                    isDone: 미완료
+                    create_at: '1 second ago 전에 작성되었다.'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 54
+                      title:
+                        type: string
+                        example: '새 할일'
+                      content:
+                        type: string
+                        example: '저녁 장보기'
+                      deadline:
+                        type: string
+                        example: '2021-12-01'
+                      isDone:
+                        type: string
+                        example: 미완료
+                      create_at:
+                        type: string
+                        example: '1 second ago 전에 작성되었다.'
+        404:
+          description: 'todo not found'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: '해당 할일을 찾을 수가 없습니다.'
+                properties:
+                  message:
+                    type: string
+                    example: '해당 할일을 찾을 수가 없습니다.'
+        422:
+          description: '데이터가 유효하지 않을 때'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The given data was invalid.'
+                  errors:
+                    deadline:
+                      - 'The deadline is not a valid date.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The given data was invalid.'
+                  errors:
+                    type: object
+                    properties:
+                      deadline:
+                        type: array
+                        example:
+                          - 'The deadline is not a valid date.'
+                        items:
+                          type: string
+      tags:
+        - 'Todo 포스트 관리'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: '할일 제목'
+                  example: '책 읽기'
+                content:
+                  type: longText
+                  description: '할일 내용.'
+                  example: '자기개발에 대한 책을 읽자'
+                deadline:
+                  type: date
+                  description: 마감기한
+                  example: null
+                isDone:
+                  type: boolean
+                  description: 완료여부
+                  example: true
+              required:
+                - title
+                - isDone
+      security: []
+    delete:
+      summary: '특정 할일 삭제하기'
+      operationId: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        204:
+          description: success
+        404:
+          description: 'todo not found'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: '해당 할일을 찾을 수가 없습니다.'
+                properties:
+                  message:
+                    type: string
+                    example: '해당 할일을 찾을 수가 없습니다.'
+      tags:
+        - 'Todo 포스트 관리'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: '할일 아이디'
+        example: 10
+        required: true
+        schema:
+          type: integer
+  /api/v1/todos/search:
+    get:
+      summary: '할일 검색 하기'
+      operationId: ''
+      description: ''
+      parameters:
+        -
+          in: query
+          name: query
+          description: 검색어
+          example: 안녕
+          required: false
+          schema:
+            type: string
+            description: 검색어
+            example: 안녕
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 50
+                    title: '빨래하기. - 예시'
+                    content: '빨래돌릴때 수건 먼저 돌리기 - 예시'
+                    deadline: '2020-12-08'
+                    isDone: 완료
+                    create_at: '15 hours ago 전에 작성되었다.'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 50
+                      title:
+                        type: string
+                        example: '빨래하기. - 예시'
+                      content:
+                        type: string
+                        example: '빨래돌릴때 수건 먼저 돌리기 - 예시'
+                      deadline:
+                        type: string
+                        example: '2020-12-08'
+                      isDone:
+                        type: string
+                        example: 완료
+                      create_at:
+                        type: string
+                        example: '15 hours ago 전에 작성되었다.'
+      tags:
+        - 검색
+      security: []
+tags:
+  -
+    name: 'Todo 포스트 관리'
+    description: "\nAPIs for managing posts\nTodo 포스트를 관리합니다."
+  -
+    name: 검색
+    description: "\nAPIs for search todos\nTodo 할일을 검색 합니다.\n\n검색처리 컨트롤러"

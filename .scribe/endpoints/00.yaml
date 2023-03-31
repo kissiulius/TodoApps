@@ -1,0 +1,68 @@
+name: 검색
+description: |-
+
+  APIs for search todos
+  Todo 할일을 검색 합니다.
+
+  검색처리 컨트롤러
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/todos/search
+    metadata:
+      groupName: 검색
+      groupDescription: |-
+
+        APIs for search todos
+        Todo 할일을 검색 합니다.
+
+        검색처리 컨트롤러
+      subgroup: ''
+      subgroupDescription: ''
+      title: '할일 검색 하기'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Api-version: v1
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      query:
+        name: query
+        description: 검색어
+        required: false
+        example: 안녕
+        type: string
+        custom: []
+    cleanQueryParameters:
+      query: 안녕
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "data": {
+                  "id": 50,
+                  "title": "빨래하기. - 예시",
+                  "content": "빨래돌릴때 수건 먼저 돌리기 - 예시",
+                  "deadline": "2020-12-08",
+                  "isDone": "완료",
+                  "create_at": "15 hours ago 전에 작성되었다."
+              }
+          }
+        headers: []
+        description: success
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

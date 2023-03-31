@@ -1,0 +1,8 @@
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "deadline": [
+            "The deadline is not a valid date."
+        ]
+    }
+}

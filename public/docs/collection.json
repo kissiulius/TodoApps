@@ -1,0 +1,354 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/todoapp.test"
+        }
+    ],
+    "info": {
+        "name": "Todo Apps",
+        "_postman_id": "d7b03691-2e0b-49e7-88cc-7059e7e24810",
+        "description": "\uc124\uba85 \ubd80\ubd84 \uc785\ub2c8\ub2e4. \ud604\uc7ac \ubc84\uc804\uc740 v1\uc785\ub2c8\ub2e4.",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Todo \ud3ec\uc2a4\ud2b8 \uad00\ub9ac",
+            "description": "\nAPIs for managing posts\nTodo \ud3ec\uc2a4\ud2b8\ub97c \uad00\ub9ac\ud569\ub2c8\ub2e4.",
+            "item": [
+                {
+                    "name": "\ud3ec\uc2a4\ud2b8 \ub9ac\uc2a4\ud2b8 \uac00\uc838\uc624\uae30",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/todos",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "\ud398\uc774\uc9c0",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/todos?page=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Api-version",
+                                "value": "v1"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 52,\n            \"title\": \"\uc548\ub155\ud558\uc138\uc694? - \uc608\uc2dc\uc785\ub2c8\ub2e4\",\n            \"content\": \"\ud558\ud558\ud558\ud558\",\n            \"deadline\": \"2021-12-12\",\n            \"isDone\": 52,\n            \"updated_at\": \"4 hours ago \uc804\uc5d0 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n        },\n        {\n            \"id\": 51,\n            \"title\": \"\uc548\ub155\ud558\uc138\uc694?\",\n            \"content\": \"\ud558\ud558\ud558\",\n            \"deadline\": \"\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838 \uc788\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.\",\n            \"isDone\": 51,\n            \"updated_at\": \"4 hours ago \uc804\uc5d0 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Reprehenderit.\",\n            \"content\": \"Quisquam ipsa dignissimos qui ea ut quis maiores. Sit velit deleniti at est.\",\n            \"deadline\": \"\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838 \uc788\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.\",\n            \"isDone\": 2,\n            \"updated_at\": \"4 hours ago \uc804\uc5d0 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Eum.\",\n            \"content\": \"Cum blanditiis voluptas est molestiae ex. Maiores est omnis labore nam atque.\",\n            \"deadline\": \"\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838 \uc788\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.\",\n            \"isDone\": 3,\n            \"updated_at\": \"4 hours ago \uc804\uc5d0 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Iste quae.\",\n            \"content\": \"Aut voluptatibus voluptates cum nulla. Eos id et reiciendis numquam placeat.\",\n            \"deadline\": \"\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838 \uc788\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.\",\n            \"isDone\": 4,\n            \"updated_at\": \"4 hours ago \uc804\uc5d0 \uc218\uc815\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 11,\n        \"path\": \"http:\/\/127.0.0.1:8000\/api\/v1\/todos\",\n        \"per_page\": 5,\n        \"to\": 5,\n        \"total\": 51\n    }\n}\n",
+                            "name": "\uc131\uacf5"
+                        }
+                    ]
+                },
+                {
+                    "name": "\ud3ec\uc2a4\ud2b8 \ucd94\uac00\ud558\uae30",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/todos",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/todos"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Api-version",
+                                "value": "v1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"\ucc45 \uc77d\uae30\",\"content\":\"\uc790\uae30\uac1c\ubc1c\uc5d0 \ub300\ud55c \ucc45\uc744 \uc77d\uc790\",\"isDone\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n    \"data\": {\n        \"id\": 54,\n        \"title\": \"\uc0c8 \ud560\uc77c\",\n        \"content\": \"\uc800\ub141 \uc7a5\ubcf4\uae30\",\n        \"deadline\": \"2021-12-01\",\n        \"isDone\": \"\ubbf8\uc644\ub8cc\",\n        \"create_at\": \"1 second ago \uc804\uc5d0 \uc791\uc131\ub418\uc5c8\ub2e4.\"\n    }\n}\n",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n    \"data\": {\n        \"id\": 50,\n        \"title\": \"\ube68\ub798\ud558\uae30. - \uc608\uc2dc\",\n        \"content\": \"\ube68\ub798\ub3cc\ub9b4\ub54c \uc218\uac74 \uba3c\uc800 \ub3cc\ub9ac\uae30 - \uc608\uc2dc\",\n        \"deadline\": \"\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838\uc788\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.\",\n        \"isDone\": \"\uc644\ub8cc\",\n        \"create_at\": \"15 hours ago \uc804\uc5d0 \uc791\uc131\ub418\uc5c8\ub2e4.\"\n    }\n}\n",
+                            "name": "\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838 \uc788\uc9c0 \uc54a\uc744 \ub54c"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"deadline\": [\n            \"The deadline is not a valid date.\"\n        ]\n    }\n}\n",
+                            "name": "\ub370\uc774\ud130\uac00 \uc720\ud6a8\ud558\uc9c0 \uc54a\uc744 \ub54c"
+                        }
+                    ]
+                },
+                {
+                    "name": "\ud2b9\uc815 \ud560\uc77c \uac00\uc838\uc624\uae30",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/todos\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/todos\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "\ud560\uc77c \uc544\uc774\ub514"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Api-version",
+                                "value": "v1"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 50,\n        \"title\": \"\ube68\ub798\ud558\uae30. - \uc608\uc2dc\",\n        \"content\": \"\ube68\ub798\ub3cc\ub9b4\ub54c \uc218\uac74 \uba3c\uc800 \ub3cc\ub9ac\uae30 - \uc608\uc2dc\",\n        \"deadline\": \"2020-12-08\",\n        \"isDone\": \"\uc644\ub8cc\",\n        \"create_at\": \"15 hours ago \uc804\uc5d0 \uc791\uc131\ub418\uc5c8\ub2e4.\"\n    }\n}\n",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 50,\n        \"title\": \"\ube68\ub798\ud558\uae30. - \uc608\uc2dc\",\n        \"content\": \"\ube68\ub798\ub3cc\ub9b4\ub54c \uc218\uac74 \uba3c\uc800 \ub3cc\ub9ac\uae30 - \uc608\uc2dc\",\n        \"deadline\": \"\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838\uc788\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.\",\n        \"isDone\": \"\uc644\ub8cc\",\n        \"create_at\": \"15 hours ago \uc804\uc5d0 \uc791\uc131\ub418\uc5c8\ub2e4.\"\n    }\n}\n",
+                            "name": "\ub9c8\uac10\uae30\ud55c\uc774 \uc815\ud574\uc838 \uc788\uc9c0 \uc54a\uc744\ub54c"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"\ud574\ub2f9 \ud560\uc77c\uc744 \ucc3e\uc744 \uc218\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "name": "todo not found"
+                        }
+                    ]
+                },
+                {
+                    "name": "\ud2b9\uc815 \ud560\uc77c \uc218\uc815\ud558\uae30",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/todos\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/todos\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "\ud560\uc77c \uc544\uc774\ub514"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Api-version",
+                                "value": "v1"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"\ucc45 \uc77d\uae30\",\"content\":\"\uc790\uae30\uac1c\ubc1c\uc5d0 \ub300\ud55c \ucc45\uc744 \uc77d\uc790\",\"isDone\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 54,\n        \"title\": \"\uc0c8 \ud560\uc77c\",\n        \"content\": \"\uc800\ub141 \uc7a5\ubcf4\uae30\",\n        \"deadline\": \"2021-12-01\",\n        \"isDone\": \"\ubbf8\uc644\ub8cc\",\n        \"create_at\": \"1 second ago \uc804\uc5d0 \uc791\uc131\ub418\uc5c8\ub2e4.\"\n    }\n}\n",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"\ud574\ub2f9 \ud560\uc77c\uc744 \ucc3e\uc744 \uc218\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "name": "todo not found"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"deadline\": [\n            \"The deadline is not a valid date.\"\n        ]\n    }\n}\n",
+                            "name": "\ub370\uc774\ud130\uac00 \uc720\ud6a8\ud558\uc9c0 \uc54a\uc744 \ub54c"
+                        }
+                    ]
+                },
+                {
+                    "name": "\ud2b9\uc815 \ud560\uc77c \uc0ad\uc81c\ud558\uae30",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/todos\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/todos\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "\ud560\uc77c \uc544\uc774\ub514"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Api-version",
+                                "value": "v1"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 204,
+                            "body": "{}",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"\ud574\ub2f9 \ud560\uc77c\uc744 \ucc3e\uc744 \uc218\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "name": "todo not found"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "\uac80\uc0c9",
+            "description": "\nAPIs for search todos\nTodo \ud560\uc77c\uc744 \uac80\uc0c9 \ud569\ub2c8\ub2e4.\n\n\uac80\uc0c9\ucc98\ub9ac \ucee8\ud2b8\ub864\ub7ec",
+            "item": [
+                {
+                    "name": "\ud560\uc77c \uac80\uc0c9 \ud558\uae30",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/todos\/search",
+                            "query": [
+                                {
+                                    "key": "query",
+                                    "value": "%EC%95%88%EB%85%95",
+                                    "description": "\uac80\uc0c9\uc5b4",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/todos\/search?query=%EC%95%88%EB%85%95"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Api-version",
+                                "value": "v1"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": 50,\n        \"title\": \"\ube68\ub798\ud558\uae30. - \uc608\uc2dc\",\n        \"content\": \"\ube68\ub798\ub3cc\ub9b4\ub54c \uc218\uac74 \uba3c\uc800 \ub3cc\ub9ac\uae30 - \uc608\uc2dc\",\n        \"deadline\": \"2020-12-08\",\n        \"isDone\": \"\uc644\ub8cc\",\n        \"create_at\": \"15 hours ago \uc804\uc5d0 \uc791\uc131\ub418\uc5c8\ub2e4.\"\n    }\n}\n",
+                            "name": "success"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
